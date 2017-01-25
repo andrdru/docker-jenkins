@@ -2,7 +2,7 @@ FROM debian:jessie
 
 RUN apt-get update && \
     apt-get --no-install-recommends install -q -y openjdk-7-jre-headless && \
-    apt-get -y install nodejs npm &&\
+    apt-get -y install nodejs nodejs-legacy npm &&\
     apt-get -y install git
 
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
