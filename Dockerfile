@@ -4,7 +4,8 @@ RUN apt-get update && \
     apt-get --no-install-recommends install -q -y openjdk-7-jre-headless && \
     #apt-get -y install nodejs nodejs-legacy npm &&\
     apt-get -y install curl &&\
-    apt-get -y install git
+    apt-get -y install git &&\
+    apt-get -y install bzip2
 
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
 RUN apt-get install -y nodejs
