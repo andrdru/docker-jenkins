@@ -6,6 +6,7 @@ Including
 - jenkins
 - git
 - npm
+- docker with docker-compose
 
 ##Docker-compose
 ```

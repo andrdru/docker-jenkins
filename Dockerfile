@@ -11,6 +11,24 @@ RUN apt-get update && \
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
 RUN apt-get install -y nodejs
 
+#let's put docker in docker =)
+RUN apt-get install apt-transport-https \
+                           ca-certificates \
+                           software-properties-common
+
+RUN curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -
+
+RUN sudo add-apt-repository \
+           "deb https://apt.dockerproject.org/repo/ \
+           debian-$(lsb_release -cs) \
+           main"
+
+RUN apt-get update && \
+apt-get -y install docker-engine
+
+RUN curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
+
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
