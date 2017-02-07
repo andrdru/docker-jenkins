@@ -12,13 +12,13 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
 RUN apt-get install -y nodejs
 
 #let's put docker in docker =)
-RUN apt-get install apt-transport-https \
+RUN apt-get -y install apt-transport-https \
                            ca-certificates \
                            software-properties-common
 
 RUN curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -
 
-RUN sudo add-apt-repository \
+RUN add-apt-repository \
            "deb https://apt.dockerproject.org/repo/ \
            debian-$(lsb_release -cs) \
            main"
