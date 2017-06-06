@@ -29,7 +29,8 @@ apt-get -y install docker-engine
 RUN curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 
-ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
+#ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
+ADD http://mirrors.jenkins-ci.org/war/2.46/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
 
