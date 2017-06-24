@@ -11,6 +11,8 @@ RUN apt-get update && \
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
 RUN apt-get install -y nodejs
 
+RUN npm install -g less
+
 #let's put docker in docker =)
 RUN apt-get -y install apt-transport-https \
                            ca-certificates \
