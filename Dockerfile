@@ -8,6 +8,9 @@ RUN apt-get update && \
     apt-get -y install bzip2 &&\
     apt-get -y install sshpass
 
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
 RUN apt-get install -y nodejs
 
