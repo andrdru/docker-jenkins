@@ -14,7 +14,8 @@ RUN apt-get -y install php7.0-cli
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
+#RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
 RUN npm install -g less
@@ -37,8 +38,10 @@ apt-get -y install docker-engine
 RUN curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 
-#ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
-ADD http://mirrors.jenkins-ci.org/war/2.46/jenkins.war /opt/jenkins.war
+#debian jessie version
+#ADD http://mirrors.jenkins-ci.org/war/2.46/jenkins.war /opt/jenkins.war
+ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
+
 RUN chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
 
