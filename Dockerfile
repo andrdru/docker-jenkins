@@ -8,7 +8,8 @@ RUN apt-get update && \
     apt-get -y install git &&\
     apt-get -y install bzip2 &&\
     apt-get -y install sshpass &&\
-    apt-get -y install wget
+    apt-get -y install wget &&\
+    apt-get -y install gnupg
 
     RUN apt-get -y install apt-transport-https lsb-release ca-certificates
 
