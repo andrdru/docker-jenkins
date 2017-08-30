@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 
 RUN apt-get update && \
     #apt-get --no-install-recommends install -q -y openjdk-8-jre-headless && \
@@ -9,8 +9,8 @@ RUN apt-get update && \
     apt-get -y install bzip2 &&\
     apt-get -y install sshpass
 
-#RUN apt-get -y install php7.0-cli
-RUN apt-get -y install php5-cli
+RUN apt-get -y install php7.1-cli
+#RUN apt-get -y install php5-cli
 
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
