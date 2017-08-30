@@ -25,8 +25,8 @@ RUN apt-get -y install php7.1-cli
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
-#RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
+#RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
 RUN apt-get install -y nodejs
 
 RUN npm install -g less
