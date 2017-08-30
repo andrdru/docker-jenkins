@@ -7,7 +7,17 @@ RUN apt-get update && \
     apt-get -y install curl &&\
     apt-get -y install git &&\
     apt-get -y install bzip2 &&\
-    apt-get -y install sshpass
+    apt-get -y install sshpass &&\
+    apt-get -y install wget
+
+    RUN apt-get -y install apt-transport-https lsb-release ca-certificates
+
+RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+
+RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+
+RUN apt-get update
+
 
 RUN apt-get -y install php7.1-cli
 #RUN apt-get -y install php5-cli
