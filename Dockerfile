@@ -6,7 +6,7 @@ RUN apt-get update && \
     #apt-get -y install nodejs nodejs-legacy npm &&\
     apt-get -y install curl &&\
     apt-get -y install git &&\
-    apt-get -y install bzip2 &&\
+    apt-get -y install zip unzip bzip2 &&\
     apt-get -y install sshpass &&\
     apt-get -y install wget &&\
     apt-get -y install gnupg
@@ -20,7 +20,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
 RUN apt-get update
 
 
-RUN apt-get -y install php7.1-cli
+RUN apt-get -y install php7.1-cli php7.1-zip
 #RUN apt-get -y install php5-cli
 
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
