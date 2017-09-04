@@ -19,7 +19,6 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
 
 RUN apt-get update
 
-
 RUN apt-get -y install php7.1-cli php7.1-zip
 #RUN apt-get -y install php5-cli
 
